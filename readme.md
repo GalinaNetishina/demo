@@ -1,14 +1,9 @@
-# Trading Result App
-
-.env-non-dev заполнить
-
-### запуск в контейнере
+сервисы для создания объектов из апи не готовы, не хватило времени адаптировать, и квери так же(
 
 из корня проекта
 ```bash
-docker compose build
-docker compose up
+docker compose up --build
+
 ```
 
- ![api doc](img/api.png) 
- ![example](img/filters.png)
+

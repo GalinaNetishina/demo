@@ -182,6 +182,6 @@ def list_power_feeds(
     #     query = query.filter_by_name_like(name)
 
     with session:
-        result = query.paginate(session, page, page_size)
+        result = query.all(session)
 
     return Page.from_sa_result(PowerFeed, result)

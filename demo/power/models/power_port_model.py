@@ -36,4 +36,4 @@ class PowerPortModel(SATSMixin, CabledObjectMixin, CabledPathEndpoint, Model):
         ),
         nullable=True,
     )
-    device_model: Mapped["DeviceModel"] = relationship()
+    device: Mapped["DeviceModel"] = relationship()

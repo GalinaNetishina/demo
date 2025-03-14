@@ -256,7 +256,7 @@ class CableTermination(Model):
     )
     cable_end: Mapped[CableEndEnum] = mapped_column(Enum(
             CableEndEnum,
-            name="cables_end",
+            name="cables_ends",
             values_callable=lambda obj: [item.value for item in obj],
             ),
         nullable=True

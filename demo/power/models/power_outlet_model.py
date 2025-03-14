@@ -14,8 +14,8 @@ class PowerOutletModel(SATSMixin, CabledObjectMixin, CabledPathEndpoint, Model):
 
     id: Mapped[int] = mapped_column("id", BigInteger, primary_key=True)
     tenant_id: Mapped[str] = mapped_column()
-    device_model_id: Mapped[int] = mapped_column(
-        BigInteger, ForeignKey("device_models.id", ondelete="CASCADE")
+    device_id: Mapped[int] = mapped_column(
+        BigInteger, ForeignKey("devices.id", ondelete="CASCADE")
     )
     power_port_id: Mapped[int | None] = mapped_column(
         BigInteger, ForeignKey("power_ports.id", ondelete="SET NULL")
@@ -42,4 +42,4 @@ class PowerOutletModel(SATSMixin, CabledObjectMixin, CabledPathEndpoint, Model):
         nullable=True,
     )
     power_port: Mapped["PowerPortModel"] = relationship()
-    device_model: Mapped["DeviceModelModel"] = relationship()
+    device: Mapped["DeviceModel"] = relationship()
